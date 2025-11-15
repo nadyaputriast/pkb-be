@@ -1,8 +1,14 @@
 import requests
 from pymongo import MongoClient
 from sentence_transformers import SentenceTransformer
-from apiKey import TMDB_API_KEY, MONGO_CONNECTION_STRING
 import logging
+from dotenv import load_dotenv
+import os
+load_dotenv()
+
+GROQ = os.getenv("GROQ")
+TMDB_API_KEY = os.getenv("TMDB_API_KEY")
+MONGO_CONNECTION_STRING = os.getenv("MONGO_CONNECTION_STRING")
 
 logging.basicConfig(level=logging.INFO)
 
